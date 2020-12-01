@@ -1,9 +1,22 @@
 function populatePre(url) {
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
-        document.getElementById('contents').textContent = this.responseText;
+        this.responseText.split('\n').forEach(file => addText(file));
     };
     xhr.open('GET', url);
     xhr.send();
 }
-populatePre('content.txt');
+
+function addText(url) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        var h = document.createElement('H2');
+        h.appendChild(document.createTextNode(url))
+        document.getElementById('contents').appendChild(h);
+        document.getElementById('contents').appendChild(this.responseText);
+    };
+    xhr.open('GET', url);
+    xhr.send();
+}
+
+populatePre('files');
