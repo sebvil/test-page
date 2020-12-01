@@ -13,7 +13,7 @@ function addText(url) {
         var h = document.createElement('H2');
         h.appendChild(document.createTextNode(url))
         document.getElementById('contents').appendChild(h);
-        document.getElementById('contents').appendChild(this.responseText);
+        document.getElementById('contents').appendChild(document.createTextNode(this.responseText));
     };
     xhr.open('GET', url);
     xhr.send();
