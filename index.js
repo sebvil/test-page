@@ -8,6 +8,9 @@ function populatePre(url) {
 }
 
 function addText(url) {
+    if (!url) {
+        return;
+    }
     var xhr = new XMLHttpRequest();
     console.log(url)
     xhr.onload = function () {
