@@ -9,6 +9,7 @@ function populatePre(url) {
 
 function addText(url) {
     var xhr = new XMLHttpRequest();
+    console.log(url)
     xhr.onload = function () {
         var h = document.createElement('H2');
         h.appendChild(document.createTextNode(url))
